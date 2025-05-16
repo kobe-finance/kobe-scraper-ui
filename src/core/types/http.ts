@@ -91,6 +91,6 @@ export type {
   HttpRequestOptions,
   HttpRequest,
   HttpResponse,
-  HttpClient,
+  HttpClient, // Added HttpClient to the exports
   HttpClientOptions
 };
