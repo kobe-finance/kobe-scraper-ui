@@ -91,6 +91,5 @@ export type {
   HttpRequestOptions,
   HttpRequest,
   HttpResponse,
-  HttpClient,
   HttpClientOptions
 };
