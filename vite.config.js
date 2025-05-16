@@ -71,6 +71,8 @@ export default defineConfig({
       loader: {
         '.js': 'jsx',
         '.html': 'jsx',
+        '.ts': 'tsx',
+        '.tsx': 'tsx'
       },
     },
   },
