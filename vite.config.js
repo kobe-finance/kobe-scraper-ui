@@ -7,7 +7,9 @@ import viteCompression from 'vite-plugin-compression';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      include: [/\.[tj]sx?$/, /\.html$/], // Enable JSX in HTML files
+    }),
     splitVendorChunkPlugin(),
     viteCompression({
       algorithm: 'gzip',
@@ -62,5 +64,14 @@ export default defineConfig({
   preview: {
     port: 4173,
     open: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+        '.html': 'jsx',
+      },
+    },
   },
 });
