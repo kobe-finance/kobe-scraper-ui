@@ -84,3 +84,13 @@ export interface HttpClientOptions {
   response_interceptor?: <T>(response: HttpResponse<T>) => HttpResponse<T> | Promise<HttpResponse<T>>;
   error_interceptor?: (error: any) => any;
 }
+
+// Export all types and interfaces
+export type {
+  HttpHeaders,
+  HttpRequestOptions,
+  HttpRequest,
+  HttpResponse,
+  HttpClient,
+  HttpClientOptions
+};
