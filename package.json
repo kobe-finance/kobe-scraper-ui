@@ -78,7 +78,6 @@
     "postcss-custom-properties": "^14.0.4",
     "postcss-nested": "^7.0.2",
     "prettier": "^3.5.3",
-    "react-virtual": "^2.10.4",
     "rollup-plugin-visualizer": "^5.14.0",
     "terser": "^5.24.0",
     "typescript": "~5.8.3",
