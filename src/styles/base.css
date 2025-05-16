@@ -1,0 +1,105 @@
+/**
+ * Base styles for Tailwind CSS v4
+ */
+
+/* Define core utility classes explicitly */
+.bg-white {
+  background-color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-gray-200 {
+  border-color: rgb(229 231 235);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Basic component styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary {
+  background-color: rgb(var(--color-primary-600) / 1);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--color-primary-700) / 1);
+}
+
+.card {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgb(229 231 235);
+  background-color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-color: rgb(209 213 219);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgb(var(--color-primary-500) / 1);
+  box-shadow: 0 0 0 1px rgb(var(--color-primary-500) / 1);
+}

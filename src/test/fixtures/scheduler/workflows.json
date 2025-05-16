@@ -1,0 +1,164 @@
+[
+  {
+    "id": "workflow-1",
+    "name": "E-commerce Scraper",
+    "description": "Scrapes product data from e-commerce websites",
+    "nodes": [
+      {
+        "id": "node-1",
+        "type": "trigger",
+        "position": { "x": 100, "y": 100 },
+        "data": {
+          "triggerType": "schedule",
+          "configuration": {}
+        }
+      },
+      {
+        "id": "node-2",
+        "type": "action",
+        "position": { "x": 400, "y": 100 },
+        "data": {
+          "actionType": "scrape",
+          "configuration": {
+            "url": "https://example.com/products",
+            "selector": ".product-item"
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "type": "transformation",
+        "position": { "x": 700, "y": 100 },
+        "data": {
+          "transformationType": "map",
+          "configuration": {
+            "mapping": {
+              "name": ".product-name",
+              "price": ".product-price",
+              "image": ".product-image img[src]"
+            }
+          }
+        }
+      },
+      {
+        "id": "node-4",
+        "type": "action",
+        "position": { "x": 1000, "y": 100 },
+        "data": {
+          "actionType": "saveData",
+          "configuration": {
+            "dataStore": "database",
+            "tableName": "products"
+          }
+        }
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-1",
+        "source": "node-1",
+        "target": "node-2",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      },
+      {
+        "id": "conn-2",
+        "source": "node-2",
+        "target": "node-3",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      },
+      {
+        "id": "conn-3",
+        "source": "node-3",
+        "target": "node-4",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      }
+    ],
+    "createdAt": "2025-05-01T00:00:00.000Z",
+    "updatedAt": "2025-05-10T00:00:00.000Z"
+  },
+  {
+    "id": "workflow-2",
+    "name": "Price Analyzer",
+    "description": "Analyzes product price trends over time",
+    "nodes": [
+      {
+        "id": "node-1",
+        "type": "trigger",
+        "position": { "x": 100, "y": 100 },
+        "data": {
+          "triggerType": "schedule",
+          "configuration": {}
+        }
+      },
+      {
+        "id": "node-2",
+        "type": "action",
+        "position": { "x": 400, "y": 100 },
+        "data": {
+          "actionType": "queryData",
+          "configuration": {
+            "source": "database",
+            "query": "SELECT * FROM products WHERE date_added > :lastWeek"
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "type": "transformation",
+        "position": { "x": 700, "y": 100 },
+        "data": {
+          "transformationType": "aggregate",
+          "configuration": {
+            "groupBy": "product_id",
+            "calculate": [
+              { "type": "avg", "field": "price", "as": "avg_price" },
+              { "type": "min", "field": "price", "as": "min_price" },
+              { "type": "max", "field": "price", "as": "max_price" }
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-4",
+        "type": "notification",
+        "position": { "x": 1000, "y": 100 },
+        "data": {
+          "notificationType": "email",
+          "configuration": {
+            "to": "analysts@example.com",
+            "subject": "Weekly Price Analysis",
+            "template": "price-analysis"
+          }
+        }
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-1",
+        "source": "node-1",
+        "target": "node-2",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      },
+      {
+        "id": "conn-2",
+        "source": "node-2",
+        "target": "node-3",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      },
+      {
+        "id": "conn-3",
+        "source": "node-3",
+        "target": "node-4",
+        "sourceHandle": "output",
+        "targetHandle": "input"
+      }
+    ],
+    "createdAt": "2025-05-02T00:00:00.000Z",
+    "updatedAt": "2025-05-10T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimal React Test</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    import React from 'react';
+    import { createRoot } from 'react-dom/client';
+    import './src/styles/globals.css';
+    
+    // Basic test component that doesn't depend on any app architecture
+    const TestComponent = () => {
+      return (
+        <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto', fontFamily: 'Arial' }}>
+          <h1 style={{ color: '#333' }}>React Is Working</h1>
+          <p>If you can see this message, basic React rendering is functioning correctly.</p>
+          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#f5f5f5', borderRadius: '4px' }}>
+            <p><strong>Environment:</strong></p>
+            <pre>{JSON.stringify({
+              NODE_ENV: import.meta.env.MODE,
+              API_URL: import.meta.env.VITE_API_BASE_URL,
+              DEBUG: import.meta.env.VITE_DEBUG
+            }, null, 2)}</pre>
+          </div>
+        </div>
+      );
+    };
+    
+    // Mount component to DOM
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(React.createElement(TestComponent));
+  </script>
+</body>
+</html>

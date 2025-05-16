@@ -1,0 +1,77 @@
+[
+  {
+    "id": "job-1",
+    "name": "Daily Product Scraping",
+    "workflowId": "workflow-1",
+    "workflowName": "E-commerce Scraper",
+    "scheduleType": "recurring",
+    "frequency": "daily",
+    "startTime": "2025-05-13T08:00:00.000Z",
+    "endTime": null,
+    "hourOfDay": 8,
+    "minuteOfHour": 0,
+    "timezone": "UTC",
+    "status": "scheduled",
+    "nextRunTime": "2025-05-14T08:00:00.000Z",
+    "createdAt": "2025-05-10T00:00:00.000Z",
+    "updatedAt": "2025-05-10T00:00:00.000Z",
+    "dependencies": [],
+    "notifications": [
+      {
+        "id": "notification-1",
+        "type": "email",
+        "events": ["success", "failure"],
+        "recipients": ["admin@example.com"],
+        "configuration": {
+          "subject": "Job Run Status"
+        },
+        "createdAt": "2025-05-10T00:00:00.000Z"
+      }
+    ],
+    "parameters": {}
+  },
+  {
+    "id": "job-2",
+    "name": "Weekly Price Analysis",
+    "workflowId": "workflow-2",
+    "workflowName": "Price Analyzer",
+    "scheduleType": "recurring",
+    "frequency": "weekly",
+    "startTime": "2025-05-17T10:00:00.000Z",
+    "endTime": null,
+    "hourOfDay": 10,
+    "minuteOfHour": 0,
+    "daysOfWeek": ["saturday"],
+    "timezone": "UTC",
+    "status": "scheduled",
+    "nextRunTime": "2025-05-17T10:00:00.000Z",
+    "createdAt": "2025-05-10T00:00:00.000Z",
+    "updatedAt": "2025-05-10T00:00:00.000Z",
+    "dependencies": [],
+    "notifications": [],
+    "parameters": {}
+  },
+  {
+    "id": "job-3",
+    "name": "One-time Data Export",
+    "workflowId": "workflow-4",
+    "workflowName": "Export Pipeline",
+    "scheduleType": "one-time",
+    "frequency": "once",
+    "startTime": "2025-05-20T15:30:00.000Z",
+    "endTime": null,
+    "hourOfDay": 15,
+    "minuteOfHour": 30,
+    "timezone": "UTC",
+    "status": "scheduled",
+    "nextRunTime": "2025-05-20T15:30:00.000Z",
+    "createdAt": "2025-05-10T00:00:00.000Z",
+    "updatedAt": "2025-05-10T00:00:00.000Z",
+    "dependencies": [],
+    "notifications": [],
+    "parameters": {
+      "exportFormat": "csv",
+      "includeHeaders": true
+    }
+  }
+]

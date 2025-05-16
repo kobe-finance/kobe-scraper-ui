@@ -1,0 +1,109 @@
+/* index.css */
+/**
+ * Primary CSS entry point
+ * Following official Tailwind CSS v4 pattern for Vite projects
+ */
+
+/* Tailwind directives - these must be the first directives in the file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import explicit base styles for components */
+@import './base.css';
+
+/* Custom base styles */
+@layer base {
+  :root {
+    /* Color system - light theme */
+    --color-primary-50: 240 249 255;
+    --color-primary-100: 224 242 254;
+    --color-primary-200: 186 230 253;
+    --color-primary-300: 125 211 252;
+    --color-primary-400: 56 189 248;
+    --color-primary-500: 14 165 233;
+    --color-primary-600: 2 132 199;
+    --color-primary-700: 3 105 161;
+    --color-primary-800: 7 89 133;
+    --color-primary-900: 12 74 110;
+    --color-primary-950: 8 47 73;
+    
+    --color-secondary-50: 245 243 255;
+    --color-secondary-100: 237 233 254;
+    --color-secondary-200: 221 214 254;
+    --color-secondary-300: 196 181 253;
+    --color-secondary-400: 167 139 250;
+    --color-secondary-500: 139 92 246;
+    --color-secondary-600: 124 58 237;
+    --color-secondary-700: 109 40 217;
+    --color-secondary-800: 91 33 182;
+    --color-secondary-900: 76 29 149;
+    --color-secondary-950: 46 16 101;
+    
+    --color-gray-50: 249 250 251;
+    --color-gray-100: 243 244 246;
+    --color-gray-200: 229 231 235;
+    --color-gray-300: 209 213 219;
+    --color-gray-400: 156 163 175;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 75 85 99;
+    --color-gray-700: 55 65 81;
+    --color-gray-800: 31 41 55;
+    --color-gray-900: 17 24 39;
+    --color-gray-950: 3 7 18;
+  }
+  
+  .dark {
+    /* Color system - dark theme */
+    --color-primary-50: 8 47 73;
+    --color-primary-100: 12 74 110;
+    --color-primary-200: 7 89 133;
+    --color-primary-300: 3 105 161;
+    --color-primary-400: 2 132 199;
+    --color-primary-500: 14 165 233;
+    --color-primary-600: 56 189 248;
+    --color-primary-700: 125 211 252;
+    --color-primary-800: 186 230 253;
+    --color-primary-900: 224 242 254;
+    --color-primary-950: 240 249 255;
+    
+    --color-secondary-50: 46 16 101;
+    --color-secondary-100: 76 29 149;
+    --color-secondary-200: 91 33 182;
+    --color-secondary-300: 109 40 217;
+    --color-secondary-400: 124 58 237;
+    --color-secondary-500: 139 92 246;
+    --color-secondary-600: 167 139 250;
+    --color-secondary-700: 196 181 253;
+    --color-secondary-800: 221 214 254;
+    --color-secondary-900: 237 233 254;
+    --color-secondary-950: 245 243 255;
+    
+    --color-gray-50: 3 7 18;
+    --color-gray-100: 17 24 39;
+    --color-gray-200: 31 41 55;
+    --color-gray-300: 55 65 81;
+    --color-gray-400: 75 85 99;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 156 163 175;
+    --color-gray-700: 209 213 219;
+    --color-gray-800: 229 231 235;
+    --color-gray-900: 243 244 246;
+    --color-gray-950: 249 250 251;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+  
+  .content-hidden {
+    content-visibility: hidden;
+  }
+  
+  .content-visible {
+    content-visibility: visible;
+  }
+}
